@@ -33,7 +33,7 @@ final List<Person> persons = [
       LatLng(28.945799, 79.913506),
       // Add more LatLng points as needed
     ],
-    time: ["in 10:00 AM"]
+    time: ["in: 10:00 AM"]
   ),
   Person(
     name: 'Badshah',
@@ -54,7 +54,7 @@ final List<Person> persons = [
       LatLng(28.931881, 79.926670),
       // Add more LatLng points as needed
     ],
-    time: ["10:00 AM"]
+    time: ["in: 6:00 PM out: 7:00 PM", "in: 2:00 PM out: 6:00 PM", "in: 9:00 AM out: 2:00 PM"]
   ),
   Person(
     name: 'Hanuman Kind',
@@ -65,7 +65,7 @@ final List<Person> persons = [
       LatLng(28.955146, 79.909486),
       // Add more LatLng points as needed
     ],
-    time: ["10:00 AM"]
+    time: ["in: 7:00 PM out: 10:00 PM", "in: 5:00 PM out: 7:00 PM", "in: 11:00 AM out: 5:00 PM"]
   ),
   // Add more Person instances as needed
 ];
