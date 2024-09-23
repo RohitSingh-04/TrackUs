@@ -30,9 +30,9 @@ class PersonDetailsScreen extends StatelessWidget {
               ),
               markers: person.locations.map((location) {
                 return Marker(
-                  markerId: MarkerId(location.toString()),
+                  markerId: MarkerId(person.name),
                   position: location,
-                  infoWindow: InfoWindow(title: location.toString()),
+                  infoWindow: InfoWindow(title: person.name),
                 );
               }).toSet(),
             ),
