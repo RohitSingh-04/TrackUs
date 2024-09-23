@@ -1,13 +1,16 @@
-# Flutter Location Screen
+# track_us
 
-This project implements a beautiful and functional Location screen within a Flutter application, adhering to the design specifications provided in the Figma prototype ([https://www.figma.com/proto/BJh7Dgigf6i2taOwB1pnXj/WS-Phase-%237.1?m=dev&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=2998-48148&starting-point-node-id=2998%3A52438&show-proto-sidebar=1&hide-ui=1]).
+A new Flutter project.
 
-**Features:**
+## Getting Started
 
-- **Member Attendance List:** Displays a list of members with options to view details such as current location and route traveled.
-- **Location & Route Details:** Navigates to a detailed screen showcasing the member's current location on a Google Map.
-- **Timeline View:** Displays all visited locations for the selected member in a timeline format, initially presenting today's data with a date filter for past entries.
-- **Location History Scrolling:** Enables scrolling through the complete list of visited locations for a member.
-- **Route Generation:** Generates a route between any two chosen visited locations.
-- **Route Details Screen:** Displays route information including start location, stop location, total distance traveled, and total duration.
-- **Google Map Integration:** Visualizes the selected route on a Google Map, highlighting stop locations with red dots.
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

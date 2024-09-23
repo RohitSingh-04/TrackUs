@@ -1,6 +1,6 @@
 {
-    "name": "attendance_app",
-    "short_name": "attendance_app",
+    "name": "track_us",
+    "short_name": "track_us",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
