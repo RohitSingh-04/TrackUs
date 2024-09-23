@@ -1,18 +1,25 @@
+// member_screen.dart
 import 'package:flutter/material.dart';
+import '../utils/constants.dart'; // Import constants
+import 'person_details_screen.dart';
+import '../models/person.dart'; // Import the Person model
 
 class MemberScreen extends StatefulWidget {
-  const MemberScreen({super.key});
-
   @override
   _MemberScreenState createState() => _MemberScreenState();
 }
 
 class _MemberScreenState extends State<MemberScreen> {
-  TextEditingController searchController = TextEditingController();
+  List<Person> filteredList = persons; // Initialize with the full list
 
-  void onSearch(String query) {
-    // Implement your search logic here, e.g., filter members
-    print("Searching for: $query");
+  void _filterMembers(String query) {
+    final filtered = persons.where((person) {
+      return person.name.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+
+    setState(() {
+      filteredList = filtered;
+    });
   }
 
   @override
@@ -20,30 +27,46 @@ class _MemberScreenState extends State<MemberScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Members'),
-        backgroundColor: const Color.fromARGB(255, 106, 13, 182),
-        foregroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 106, 13, 182),
       ),
       body: Column(
         children: [
-          // Search bar below the AppBar
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: searchController,
+              onChanged: _filterMembers,
               decoration: InputDecoration(
-                hintText: 'Search Members...',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                labelText: 'Search',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.search),
               ),
-              onSubmitted: onSearch, // When "Enter" or "Return" is pressed
             ),
           ),
-          const Expanded(
-            child: Center(
-              child: Text('kuch buttons aaynge yaha par'),
-            ),
+          Expanded(
+            child: filteredList.isNotEmpty
+                ? ListView.builder(
+                    itemCount: filteredList.length,
+                    itemBuilder: (context, index) {
+                      final person = filteredList[index];
+                      return ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(person.imagePath),
+                        ),
+                        title: Text(person.name),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PersonDetailsScreen(person: person),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  )
+                : Center(
+                    child: Text('No results found'),
+                  ),
           ),
         ],
       ),
