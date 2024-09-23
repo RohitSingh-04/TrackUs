@@ -4,7 +4,7 @@ import '../models/person.dart';
 // Constants for persons and their locations
 final List<Person> persons = [
   Person(
-    name: 'John Doe',
+    name: 'Mohit Chauhan',
     imagePath: 'assets/person1.png',
     locations: [
       LatLng(28.948457, 79.905233),
@@ -13,6 +13,7 @@ final List<Person> persons = [
       LatLng(28.972021, 79.927961),
       // Add more LatLng points as needed
     ],
+    time: ["in: 7:00 PM out: 10:00 PM", "in: 5:00 PM out: 7:00 PM", "in: 3:00 PM out: 7:00 PM", "in: 10:00 AM out: 3:00 PM",]
   ),
   Person(
     name: 'Karan Aujla',
@@ -23,6 +24,7 @@ final List<Person> persons = [
       LatLng(28.955327, 79.933427),
       // Add more LatLng points as needed
     ],
+    time: ["in: 5:00 PM out: 7:00 PM", "in: 5:00 PM out: 3:00 PM", "in: 9:00 AM out: 3:00 PM"]
   ),
   Person(
     name: 'Honey Singh',
@@ -31,6 +33,7 @@ final List<Person> persons = [
       LatLng(28.945799, 79.913506),
       // Add more LatLng points as needed
     ],
+    time: ["in 10:00 AM"]
   ),
   Person(
     name: 'Badshah',
@@ -40,6 +43,29 @@ final List<Person> persons = [
       LatLng(29.001264, 79.927685),
       // Add more LatLng points as needed
     ],
+    time: ["in: 7:00 PM out: 10:00 PM", "in: 5:00 PM out: 7:00 PM"]
+  ),
+  Person(
+    name: 'Rafter',
+    imagePath: 'assets/person5.png',
+    locations: [
+      LatLng(28.932485, 79.928640),
+      LatLng(28.932971, 79.926711),
+      LatLng(28.931881, 79.926670),
+      // Add more LatLng points as needed
+    ],
+    time: ["10:00 AM"]
+  ),
+  Person(
+    name: 'Hanuman Kind',
+    imagePath: 'assets/person6.png',
+    locations: [
+      LatLng(28.958429, 79.903067),
+      LatLng(28.956277, 79.910208),
+      LatLng(28.955146, 79.909486),
+      // Add more LatLng points as needed
+    ],
+    time: ["10:00 AM"]
   ),
   // Add more Person instances as needed
 ];

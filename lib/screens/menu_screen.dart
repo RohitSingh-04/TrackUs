@@ -193,7 +193,7 @@ class _MenuScreenState extends State<MenuScreen> {
           backgroundImage: AssetImage(person.imagePath),
         ),
         title: Text(person.name),
-        subtitle: Text('Location Count: ${person.locations.length}'),
+        subtitle: Text('Location Count: ${person.locations.length}\n${person.time[0]}'),
         onTap: () {
           // Navigate to detailed view for the person
           Navigator.push(

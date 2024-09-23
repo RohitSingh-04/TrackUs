@@ -120,10 +120,11 @@ class _PersonDetailsScreenState extends State<PersonDetailsScreen> {
                 itemCount: widget.person.locations.length,
                 itemBuilder: (context, index) {
                   final location = widget.person.locations[index];
+                  final time = widget.person.time[index];
                   return ListTile(
                     leading: Icon(Icons.location_on, color: Colors.purple),
                     title: Text('Location ${index + 1}'),
-                    subtitle: Text('Lat: ${location.latitude}, Lng: ${location.longitude}'),
+                    subtitle: Text('Lat: ${location.latitude}, Lng: ${location.longitude}\n${time}'),
                     onTap: () => _showPathBetweenLocations(index), // Handle tap to show path
                   );
                 },
