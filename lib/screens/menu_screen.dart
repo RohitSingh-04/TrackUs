@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'member_screen.dart';
+import '../utils/constants.dart';
 
 
 class MenuScreen extends StatefulWidget {
@@ -16,12 +17,19 @@ class _MenuScreenState extends State<MenuScreen> {
   late GoogleMapController mapController;
 
   // List of locations (latitude, longitude, and image path)
-  final List<Map<String, dynamic>> locations = [
-    {'lat': 37.7749, 'lng': -122.4194, 'image': 'assets/person1.png'},
-    {'lat': 37.8044, 'lng': -122.2711, 'image': 'assets/person2.png'},
-    {'lat': 37.8715, 'lng': -122.2730, 'image': 'assets/person3.png'},
-    {'lat': 37.6879, 'lng': -122.4702, 'image': 'assets/person4.png'},
-  ];
+  final List<Map<String, dynamic>> locations = persons
+    .map((person) {
+      if (person.locations.isNotEmpty) {
+        return {
+          'lat': person.locations[0].latitude,
+          'lng': person.locations[0].longitude,
+          'image': person.imagePath,
+        };
+      }
+      return null; // Handle the case where no locations exist
+    })
+    .whereType<Map<String, dynamic>>() // Filter out null values
+    .toList();
 
   final Completer<GoogleMapController> _controller = Completer();
   final Set<Marker> _markers = {};
