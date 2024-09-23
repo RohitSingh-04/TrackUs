@@ -28,6 +28,7 @@ class _MemberScreenState extends State<MemberScreen> {
       appBar: AppBar(
         title: const Text('Members'),
         backgroundColor: Color.fromARGB(255, 106, 13, 182),
+        foregroundColor: Colors.white,
       ),
       body: Column(
         children: [

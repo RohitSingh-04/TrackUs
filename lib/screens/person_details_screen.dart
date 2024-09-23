@@ -14,6 +14,7 @@ class PersonDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('${person.name}\'s History'),
         backgroundColor: Color.fromARGB(255, 106, 13, 182),
+        foregroundColor: Colors.white,
       ),
       body: Column(
         children: [
