@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+// import 'package:map_launcher/map_launcher.dart';
+import 'member_screen.dart';
 
-class MenuScreen extends StatelessWidget {
+
+class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
+
+  @override
+  _MenuScreenState createState() => _MenuScreenState();
+}
+
+class _MenuScreenState extends State<MenuScreen> {
+  bool showMemberBar = true;
 
   @override
   Widget build(BuildContext context) {
@@ -102,8 +112,42 @@ class MenuScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(
-        child: Text('bas map hii to lagana hai!'),
+      body: Column(
+        children: [
+          // Conditional rendering for the "Members" bar
+          if (showMemberBar)
+            Container(
+              color: Colors.grey[200],
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  const Icon(Icons.group, color: Colors.black),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Members',
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  const Spacer(),
+                  IconButton(
+                    icon: const Icon(Icons.arrow_forward),
+                    onPressed: () {
+                      // Navigate to MemberScreen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MemberScreen()),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+          const Expanded(
+            child: Center(
+              child: Text('bas map hii to lagana hai!'),
+            ),
+          ),
+        ],
       ),
     );
   }
