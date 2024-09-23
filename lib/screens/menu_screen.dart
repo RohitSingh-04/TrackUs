@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'member_screen.dart';
 import '../utils/constants.dart';
+import '../methods/midpoint.dart';
 
 
 class MenuScreen extends StatefulWidget {
@@ -18,18 +19,18 @@ class _MenuScreenState extends State<MenuScreen> {
 
   // List of locations (latitude, longitude, and image path)
   final List<Map<String, dynamic>> locations = persons
-    .map((person) {
-      if (person.locations.isNotEmpty) {
-        return {
-          'lat': person.locations[0].latitude,
-          'lng': person.locations[0].longitude,
-          'image': person.imagePath,
-        };
-      }
-      return null; // Handle the case where no locations exist
-    })
-    .whereType<Map<String, dynamic>>() // Filter out null values
-    .toList();
+      .map((person) {
+        if (person.locations.isNotEmpty) {
+          return {
+            'lat': person.locations[0].latitude,
+            'lng': person.locations[0].longitude,
+            'image': person.imagePath,
+          };
+        }
+        return null; // Handle the case where no locations exist
+      })
+      .whereType<Map<String, dynamic>>() // Filter out null values
+      .toList();
 
   final Completer<GoogleMapController> _controller = Completer();
   final Set<Marker> _markers = {};
@@ -184,8 +185,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       // Navigate to MemberScreen
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => MemberScreen()),
+                        MaterialPageRoute(builder: (context) => MemberScreen()),
                       );
                     },
                   ),
@@ -196,9 +196,10 @@ class _MenuScreenState extends State<MenuScreen> {
           Expanded(
             child: GoogleMap(
               onMapCreated: _onMapCreated,
-              initialCameraPosition: const CameraPosition(
-                target: LatLng(37.7749, -122.4194), // Initial map center
-                zoom: 10,
+              initialCameraPosition: CameraPosition(
+
+                target: midpointLatLng, // Initial map center
+                zoom: 13,
               ),
               markers: _markers,
             ),

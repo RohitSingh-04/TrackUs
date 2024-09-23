@@ -7,7 +7,7 @@ final List<Person> persons = [
     name: 'John Doe',
     imagePath: 'assets/person1.png',
     locations: [
-      LatLng(39.42796133580664, -110.085749655962),
+      LatLng(28.948457, 79.905233),
       // Add more LatLng points as needed
     ],
   ),
@@ -15,7 +15,7 @@ final List<Person> persons = [
     name: 'Karan Aujla',
     imagePath: 'assets/person2.png',
     locations: [
-      LatLng(100.42796133580664, -120.085749655962),
+      LatLng(28.946411, 79.920734),
       // Add more LatLng points as needed
     ],
   ),
@@ -23,7 +23,7 @@ final List<Person> persons = [
     name: 'Honey Singh',
     imagePath: 'assets/person3.png',
     locations: [
-      LatLng(37.42796133580664, -122.085749655962),
+      LatLng(28.945799, 79.913506),
       // Add more LatLng points as needed
     ],
   ),
@@ -31,7 +31,7 @@ final List<Person> persons = [
     name: 'Badshah',
     imagePath: 'assets/person4.png',
     locations: [
-      LatLng(37.42796133580664, -122.085749655962),
+      LatLng(28.955221, 79.908820),
       // Add more LatLng points as needed
     ],
   ),
