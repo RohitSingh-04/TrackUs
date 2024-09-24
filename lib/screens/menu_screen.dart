@@ -159,8 +159,9 @@ class _MenuScreenState extends State<MenuScreen> {
                   const SizedBox(width: 10),
                   const Text('Members', style: TextStyle(fontSize: 18, color: Colors.black)),
                   const Spacer(),
-                  IconButton(
-                    icon: const Icon(Icons.arrow_forward),
+                  TextButton(
+                    // icon: const Icon(Icons.arrow_forward),
+                    child: Text("change"),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -211,9 +212,8 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
           // Toggle button at the bottom
           Container(
-            color: Colors.grey[200],
             padding: const EdgeInsets.all(10),
-            child: ElevatedButton(
+            child: TextButton(
               onPressed: _toggleView,
               child: Text(showMapView ? 'Show List View' : 'Show Map View'),
             ),
