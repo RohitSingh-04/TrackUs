@@ -85,6 +85,8 @@ class _MenuScreenState extends State<MenuScreen> {
               },
             ),
             ListTile(
+              tileColor:  Color.fromARGB(255, 106, 13, 182),
+              textColor: Colors.white,
               title: const Text('Attendance'),
               onTap: () {
                 Navigator.pop(context);
